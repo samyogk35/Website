@@ -1,0 +1,219 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap); 
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat',sans-serif;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    overflow: hidden;
+}
+
+
+body{
+    height: 100vh;
+    width: 100%;
+    background-image:url(../img/hobbies.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+nav{
+    height: 80px;
+    width: 100%;
+}
+
+
+nav ul{
+    float: right;
+    margin-right: 40px;
+}
+
+nav li{
+    display: inline-block;
+    margin: 0 8px;
+    line-height: 80px;
+}
+
+nav a{
+    color: black;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    padding: 7px 10px;
+    border-radius: 3px;
+}
+
+a.active a:hover{
+    border: 1px solid white;
+    transition: .5s;
+}
+
+nav #icon{
+    color: white;
+    font-size: 30px;
+    line-height: 80px;
+    float: right;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+.logo{
+    padding-left: 30px;
+    padding-top: 20px;
+    width: 200px;
+    height: 45px;
+}
+
+.main .hobbies{
+    display: grid;
+    grid-template-columns: 40vw 40vw;
+    grid-column-gap:5vw ;
+}
+
+.main .hobbies .text{
+    padding-left: 20px;
+    font-size: 2.5vw;
+    font-weight: bold;
+    padding-top: 110px;
+}
+
+.main .hobbies .description{
+    padding-top: 110px;
+}
+
+.vwrap, #code, #music, #play, #gym, #art{
+    width: 40vw;
+    height: 50vh;
+}
+
+.vwrap{
+    /* overflow: hidden; */
+    border-radius: 25px;
+    background-color: #2f3640;
+}
+
+.vmove{
+    padding-top: 2vw;
+    padding-left: 4vw;
+    position: relative;
+    bottom: 0%;
+}
+
+@keyframes slidev {
+    0% { bottom: 0%;}
+    30% { bottom: 0%;}
+    33% { bottom: 100%;}
+    63% { bottom: 100%;}
+    66% { bottom: 200%;}
+    97% { bottom: 200%;}
+    100% { bottom: 0%;}
+}
+
+.vmove{animation: slidev linear 10s infinite;}
+.vmove:hover{ animation-play-state: paused;}
+
+.vmove span{
+    font-size: 2.5vw;
+    font-weight: bold;
+    text-decoration: underline;
+    color: grey;
+}
+
+.vmove .p{
+    font-size: 2.2vw;
+}
+
+.copyright{
+    position:fixed;bottom:0px;width:100%;
+}
+
+.main .texta.active,a:hover{
+    border: none;
+    color: #3498db;
+}
+
+@media only screen and (max-width:800px) {
+    .hobbies{font-size: 18px}
+    .hobbies a, span{
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 1048px){
+
+
+    nav ul{
+        margin-right: 20px;
+    }
+
+    nav a{
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 930px){
+    nav #icon{
+        display: block;
+    }
+
+    nav ul{
+        z-index: 2;
+        justify-self: start;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2f3640;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        padding: 0;
+    }
+
+    nav li{
+        display: block;
+        margin: 30px 0;
+        line-height: 30px;
+    }
+
+    nav a{
+        font-size: 20px;
+    }
+
+    a.active,a:hover{
+        border: none;
+        color: #3498db;
+    }
+
+    nav ul.show{
+        left: 0;
+    }
+
+    .vmove{padding: 4vw;}
+    .vmove span{font-size: 25px;}
+    .main .hobbies{padding-top: 40px;}
+}
+
+@media (max-width:540px){
+    .vwrap, #code, #music, #play, #gym, #art{
+        width: 80vw;
+        height: 50vh;
+    }
+    .main .hobbies{padding-top: 20px;grid-row-gap: 30px;grid-template-columns: 80vw ;grid-template-rows: 40vw 40vw;}
+    .main .hobbies .text{padding-top: 0px;}
+    .main .hobbies .description{padding-top: 0px;}
+}
+
+@media (max-width:360px){
+
+    nav #icon{
+        font-size: 20px;
+
+    }
+
+    
+}
